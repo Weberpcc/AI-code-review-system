@@ -32,13 +32,6 @@
 
         .header { margin-bottom: 48px; }
 
-        .header-top {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 8px;
-        }
-
         .tag {
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px;
@@ -48,6 +41,8 @@
             padding: 4px 12px;
             border-radius: 4px;
             letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 12px;
         }
 
         h1 {
@@ -89,12 +84,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
-
-        .panel-title::before { content: '//'; color: var(--muted); }
 
         .control-group { margin-bottom: 16px; }
 
@@ -134,27 +124,15 @@
         }
 
         .stat:last-child { border-bottom: none; }
-
-        .stat-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            color: var(--muted);
-        }
-
-        .stat-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 13px;
-            color: var(--accent);
-        }
-
-        .code-panel { grid-column: 2; }
+        .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); }
+        .stat-value { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); }
 
         textarea {
             width: 100%;
             background: var(--surface2);
             border: 1px solid var(--border);
             border-radius: 8px;
-            color: #ffffff;
+            color: white;
             font-size: 13px;
             font-family: 'JetBrains Mono', monospace;
             padding: 16px;
@@ -186,15 +164,9 @@
             font-family: 'Syne', sans-serif;
             cursor: pointer;
             transition: all 0.2s;
-            letter-spacing: 0.5px;
         }
 
-        .review-btn:hover {
-            background: #00ffaa;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px #00ff8840;
-        }
-
+        .review-btn:hover { background: #00ffaa; transform: translateY(-2px); box-shadow: 0 8px 30px #00ff8840; }
         .review-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
 
         .correct-btn {
@@ -212,16 +184,9 @@
             display: none;
         }
 
-        .correct-btn:hover {
-            background: #00b4d815;
-            transform: translateY(-2px);
-        }
+        .correct-btn:hover { background: #00b4d815; transform: translateY(-2px); }
 
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 48px;
-        }
+        .loading { display: none; text-align: center; padding: 48px; }
 
         .spinner {
             width: 40px;
@@ -267,22 +232,9 @@
         .score-info h3 { font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px; }
         .score-info p { color: var(--muted); font-size: 13px; font-family: 'JetBrains Mono', monospace; }
 
-        .score-track {
-            height: 6px;
-            background: var(--surface2);
-            border-radius: 3px;
-            margin-top: 12px;
-            overflow: hidden;
-        }
+        .score-track { height: 6px; background: var(--surface2); border-radius: 3px; margin-top: 12px; overflow: hidden; }
+        .score-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 3px; transition: width 1s ease; }
 
-        .score-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent), var(--accent2));
-            border-radius: 3px;
-            transition: width 1s ease;
-        }
-
-        /* Corrected code box */
         .corrected-box {
             background: var(--surface);
             border: 1px solid var(--accent);
@@ -300,12 +252,7 @@
             border-bottom: 1px solid #00ff8830;
         }
 
-        .corrected-header span {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--accent);
-            letter-spacing: 1px;
-        }
+        .corrected-header span { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent); letter-spacing: 1px; }
 
         .copy-btn {
             font-family: 'JetBrains Mono', monospace;
@@ -316,7 +263,6 @@
             padding: 4px 12px;
             border-radius: 4px;
             cursor: pointer;
-            transition: background 0.2s;
         }
 
         .copy-btn:hover { background: #00ff8825; }
@@ -324,7 +270,7 @@
         #corrected-code {
             font-family: 'JetBrains Mono', monospace;
             font-size: 13px;
-            color: #ffffff;
+            color: white;
             padding: 20px;
             white-space: pre;
             overflow-x: auto;
@@ -333,7 +279,6 @@
             overflow-y: auto;
         }
 
-        /* Diff view */
         .diff-modal {
             display: none;
             position: fixed;
@@ -363,11 +308,7 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .diff-header h2 {
-            font-size: 16px;
-            font-weight: 700;
-            color: white;
-        }
+        .diff-header h2 { font-size: 16px; font-weight: 700; color: white; }
 
         .close-btn {
             background: var(--surface);
@@ -378,21 +319,13 @@
             cursor: pointer;
             font-family: 'JetBrains Mono', monospace;
             font-size: 12px;
-            transition: background 0.2s;
         }
 
         .close-btn:hover { background: var(--border); }
 
-        .diff-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
+        .diff-grid { display: grid; grid-template-columns: 1fr 1fr; }
 
-        .diff-col {
-            padding: 20px;
-            border-right: 1px solid var(--border);
-        }
-
+        .diff-col { padding: 20px; border-right: 1px solid var(--border); }
         .diff-col:last-child { border-right: none; }
 
         .diff-col h3 {
@@ -406,43 +339,13 @@
 
         .diff-col.original h3 { color: var(--red); }
         .diff-col.corrected h3 { color: var(--accent); }
+        .diff-col pre { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: white; white-space: pre-wrap; line-height: 1.8; }
 
-        .diff-col pre {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: white;
-            white-space: pre-wrap;
-            line-height: 1.8;
-        }
+        .diff-explanation { padding: 20px 24px; border-top: 1px solid var(--border); background: var(--surface2); }
+        .diff-explanation h3 { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent2); letter-spacing: 1px; margin-bottom: 12px; }
+        .diff-explanation p { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); line-height: 1.9; white-space: pre-wrap; }
 
-        .diff-explanation {
-            padding: 20px 24px;
-            border-top: 1px solid var(--border);
-            background: var(--surface2);
-        }
-
-        .diff-explanation h3 {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--accent2);
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-
-        .diff-explanation p {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--muted);
-            line-height: 1.9;
-            white-space: pre-wrap;
-        }
-
-        /* Section cards */
-        .sections {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
+        .sections { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
         .section-card {
             background: var(--surface);
@@ -451,35 +354,22 @@
             padding: 20px;
         }
 
-        .section-card h3 {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-
+        .section-card h3 { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1px; margin-bottom: 12px; }
         .section-card.bugs { border-color: #ff475720; }
         .section-card.bugs h3 { color: var(--red); }
         .section-card.quality { border-color: #ffa50220; }
         .section-card.quality h3 { color: var(--yellow); }
+        .section-card.complexity { border-color: #00b4d820; }
+        .section-card.complexity h3 { color: var(--accent2); }
         .section-card.suggestions { border-color: #00ff8820; grid-column: 1 / -1; }
         .section-card.suggestions h3 { color: var(--accent); }
-
-        .section-card p {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: #cccccc;
-            line-height: 1.9;
-            white-space: pre-wrap;
-        }
+        .section-card p { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #cccccc; line-height: 1.9; white-space: pre-wrap; }
     </style>
 </head>
 <body>
     <div class="wrapper">
         <div class="header">
-            <div class="header-top">
-                <span class="tag">// AI POWERED</span>
-            </div>
+            <span class="tag">// AI POWERED</span>
             <h1><span class="green">Code</span><span class="blue">Review</span></h1>
             <p>// paste your code → get instant expert feedback with corrections</p>
         </div>
@@ -526,7 +416,7 @@
                 </div>
             </div>
 
-            <div class="panel code-panel">
+            <div class="panel">
                 <div class="panel-title">Editor</div>
                 <textarea id="code-input" placeholder="// paste your code here..." oninput="updateStats()"></textarea>
             </div>
@@ -570,10 +460,11 @@
                 <div class="section-card quality">
                     <h3>⚡ QUALITY</h3>
                     <p id="quality-text"></p>
-                </div><div class="section-card" style="border-color:#00b4d820">
-                <h3 style="color:var(--accent2); font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:1px; margin-bottom:12px;">∑ COMPLEXITY</h3>
-                <p id="complexity-text" style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cccccc; line-height:1.9;"></p>
-                </div>      
+                </div>
+                <div class="section-card complexity">
+                    <h3>∑ COMPLEXITY</h3>
+                    <p id="complexity-text"></p>
+                </div>
                 <div class="section-card suggestions">
                     <h3>→ SUGGESTIONS</h3>
                     <p id="suggestions-text"></p>
@@ -656,13 +547,19 @@
                 });
 
                 const data = await response.json();
+
+                if (data.status === "error") {
+                    alert("API Error: " + data.error);
+                    return;
+                }
+
                 parseAndDisplay(data.review);
-                document.getElementById("complexity-text").textContent = extractSection(text, "COMPLEXITY") || "Not analyzed";
                 document.getElementById("result").style.display = "block";
                 document.getElementById("correct-btn").style.display = "block";
                 document.getElementById("last-reviewed").textContent = new Date().toLocaleTimeString();
-            } catch {
-                alert("Something went wrong. Try again.");
+
+            } catch(e) {
+                alert("Network error: " + e.message);
             } finally {
                 document.getElementById("loading").style.display = "none";
                 document.getElementById("review-btn").disabled = false;
@@ -670,33 +567,43 @@
         }
 
         function parseAndDisplay(text) {
-            const scoreMatch = text.match(/SCORE:\s*(\d+(\.\d+)?)\s*\/\s*10/i);
+            // Score
+            const scoreMatch = text.match(/SCORE:\s*(\d+(?:\.\d+)?)\s*\/\s*10/i);
             if (scoreMatch) {
-                const score = scoreMatch[1];
+                const score = parseFloat(scoreMatch[1]);
                 document.getElementById("score-display").textContent = score;
                 document.getElementById("score-fill").style.width = (score * 10) + "%";
             }
 
-            const reasonMatch = text.match(/SCORE:.*\n(.*)/i);
-            if (reasonMatch) {
-                document.getElementById("score-reason").textContent = "// " + reasonMatch[1].trim();
+            // Score reason
+            const lines = text.split("\n");
+            const scoreLine = lines.findIndex(l => /SCORE:/i.test(l));
+            if (scoreLine !== -1 && lines[scoreLine + 1]) {
+                document.getElementById("score-reason").textContent = "// " + lines[scoreLine + 1].trim();
             }
 
-            const codeMatch = text.match(/CORRECTED_CODE:\s*([\s\S]*?)(?=\nBUGS:|$)/i);
+            // Corrected code
+            const codeMatch = text.match(/CORRECTED_CODE:\s*\n([\s\S]*?)(?=\nBUGS:)/i);
             if (codeMatch) {
                 correctedCode = codeMatch[1].trim();
                 document.getElementById("corrected-code").textContent = correctedCode;
+            } else {
+                document.getElementById("corrected-code").textContent = "No corrected code provided.";
             }
 
-            suggestionsText = extractSection(text, "SUGGESTIONS") || "";
-
+            // Sections
+            suggestionsText = extractSection(text, "SUGGESTIONS") || "No suggestions";
             document.getElementById("bugs-text").textContent = extractSection(text, "BUGS") || "No bugs found";
             document.getElementById("quality-text").textContent = extractSection(text, "QUALITY") || "See full review";
-            document.getElementById("suggestions-text").textContent = suggestionsText || "See full review";
+            document.getElementById("complexity-text").textContent = extractSection(text, "COMPLEXITY") || "Not analyzed";
+            document.getElementById("suggestions-text").textContent = suggestionsText;
         }
 
         function extractSection(text, section) {
-            const regex = new RegExp(section + "[:\\s\\-]*(.*?)(?=\\nCORRECTED_CODE:|\\nBUGS:|\\nQUALITY:|\\nSUGGESTIONS:|\\nSCORE:|$)", "si");
+            const headers = ["CORRECTED_CODE", "BUGS", "QUALITY", "SUGGESTIONS", "COMPLEXITY", "SCORE"];
+            const idx = headers.indexOf(section);
+            const nextHeaders = headers.slice(idx + 1).join("|");
+            const regex = new RegExp(section + ":\\s*\\n([\\s\\S]*?)(?=\\n(?:" + nextHeaders + "):|$)", "i");
             const match = text.match(regex);
             return match ? match[1].trim() : null;
         }
